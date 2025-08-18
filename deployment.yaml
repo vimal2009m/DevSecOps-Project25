@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: netapp-deployment
   labels:
-    app: nodeapp
+    app: netapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: netapp
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: netapp
     spec:
       containers:
-      - name: nodeserver
-        image: vimal2019oneimage:latest
+      - name: netflixserver
+        image: vimal2019/nx1:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8081
         
         
 ---
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeapp-service
+  name: netapp-service
 spec:
   selector:
-    app: nodeapp 
+    app: netapp
   type: LoadBalancer
   ports:
   - protocol: TCP
