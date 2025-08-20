@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: netflixserver
-        image: vimal2019/nx1:latest
+        image: vimal2019/netflix2025:latest
         ports:
         - containerPort: 8081
         
