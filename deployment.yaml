@@ -15,8 +15,8 @@ spec:
         app: netapp
     spec:
       containers:
-      - name: netflixserver
-        image: vimal2019/netflixnew2025:latest
+      - name: netflixserver2
+        image: vimal2019/nx2:latest
         ports:
         - containerPort: 8081
         
