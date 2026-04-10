@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: netapp-deployment
   labels:
-    app: netapp
+    app: netflix
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: netapp
+      app: netflix
   template:
     metadata:
       labels:
-        app: netapp
+        app: netflix
     spec:
       containers:
       - name: netflixserver2
-        image: vimal2019/nx2:latest
+        image: vimal2019/nx3:latest
         ports:
         - containerPort: 8081
         
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: netapp-service
+  name: netflix-svc
 spec:
   selector:
-    app: netapp
+    app: netflix
   type: LoadBalancer
   ports:
   - protocol: TCP
